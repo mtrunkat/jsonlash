@@ -88,7 +88,7 @@ Aggregate logs by two fields `req.method` and `req.routeName` and compute averag
 Filter out requests taking more than a 10s, grouped them by `req.routeName` and compute how many users requested each of them:
 
 ```bash
-... | jsonlash -f 'req.duration>10000' -a req.route --uni req.userId
+... | jsonlash -f 'req.duration>10000' -a req.routeName --uni req.userId
 ```
 
 ## Command reference
