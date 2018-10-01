@@ -1,7 +1,7 @@
 {
   "name": "jsonlash",
   "description": "JSONL transformations and aggregations CLI utility.",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "author": "Marek Trunkat @mtrunkat",
   "bin": {
     "jsonlash": "./bin/run"

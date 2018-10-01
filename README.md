@@ -62,7 +62,7 @@ logdna tail | jsonlash -f 'msg=API call' -f 'req.method=POST' -f 'req.duration>1
 Lets continue with API logs example. To group log lines by request method and compute average and maximal duration call:
 
 ```bash
-logdna tail | jsonlash -f 'msg=API call'
+logdna tail | jsonlash -f 'msg=API call' -a req.method --max req.duration --avg req.duration
 ```
 
 and output will be a table with data aggregated in realtime:
