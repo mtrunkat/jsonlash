@@ -71,6 +71,26 @@ and output will be a table with data aggregated in realtime:
     <img src="https://uc90d6b2f1095fdef187f2d0230d.previews.dropboxusercontent.com/p/orig/AANd1RKoGxAcGEkhWG_dY0JTl927e5STzencbkAfzAC5zvxrx9HH76iTZLib8fCyqCM2qWDBmlaYVHU93ETBmoVJhWK_-t9DccVvCCTYA5pqoaipZ68MzJRfAeYsiFyAZ5uetQVEZ7qpqyzQy2jo3i_9XmIviz0sYp7QbKUPK_OYOjH9CKgCIYWlXTSww7wgzY86P_vckZDrXXBMgBy6TrQf/p.gif?size=1280x960&size_mode=3" />
 </div>
 
+## Examples
+
+### 1.
+
+Aggregate logs by two fields `req.method` and `req.routeName` and compute average duration and maximum duration
+
+```bash
+
+... | jsonlash -a req.method -a req.routeName --max req.duration --avg req.duration
+
+```
+
+### 2.
+
+Filter out requests taking more than a 10s, grouped them by `req.routeName` and compute how many users requested each of them:
+
+```bash
+... | jsonlash -f 'req.duration>10000' -a req.route --uni req.userId
+```
+
 ## Command reference
 
 ```

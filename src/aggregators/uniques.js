@@ -14,6 +14,6 @@ module.exports = class Uniques {
     }
 
     get() {
-        return this.known.size();
+        return this.known.size;
     }
 };
