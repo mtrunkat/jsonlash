@@ -48,7 +48,14 @@ Simply pipe in any JSONL stream and with filter and/or aggregation flags.
 If you use only --filter then jsonlash outputs filtered jsonl stream.
 
 If you use --aggregate command then it renders a table with aggregated data.
-Additionally you may add one or more --min|--max|--sum|---avg|--uni to compute aggregated values of some fields`;
+Additionally you may add one or more --min|--max|--sum|---avg|--uni flags to compute aggregated values of some fields
+
+EXAMPLES
+
+... | jsonlash -f 'msg=API call' -e
+... | jsonlash -f 'req.duration>10000' -a req.routeName --uni req.user.id
+... | jsonlash -a req.method -a req.routeName --max req.duration --avg req.duration
+`;
 
 JsonlashCommand.flags = {
     version: flags.version({

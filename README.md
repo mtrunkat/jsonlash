@@ -119,5 +119,5 @@ DESCRIPTION
   If you use only --filter then jsonlash outputs filtered jsonl stream.
 
   If you use --aggregate command then it renders a table with aggregated data.
-  Additionally you may add one or more --min|--max|--sum|---avg|--uni to compute aggregated values of some fields
+  Additionally you may add one or more --min|--max|--sum|---avg|--uni flags to compute aggregated values of some fields
 ```
