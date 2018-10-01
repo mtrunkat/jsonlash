@@ -45,10 +45,11 @@ JsonlashCommand.description = `This is a simple command line tool to filter and 
 
 Simply pipe in any JSONL stream and with filter and/or aggregation flags.
 
-If you use only --filter then jsonlash outputs filtered jsonl stream.
+If you use only --filter flag then jsonlash outputs filtered jsonl stream.
 
-If you use --aggregate command then it renders a table with aggregated data.
-Additionally you may add one or more --min|--max|--sum|---avg|--uni flags to compute aggregated values of some fields
+If you also use --aggregate flag then it renders a table with aggregated data.
+Additionally you may add one or more --min|--max|--sum|---avg|--uni flags to
+compute aggregated values of given fields.
 
 EXAMPLES
 

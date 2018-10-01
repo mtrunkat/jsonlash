@@ -100,10 +100,10 @@ USAGE
   $ jsonlash
 
 OPTIONS
-  -a, --aggregate=aggregate  aggregate JSONL items
+  -a, --aggregate=[FIELD]    aggregate JSONL items
   -d, --debug                debug mode, shows JSON parsing errors
   -e, --expand               expand outputted JSON
-  -f, --filter=filter        filter JSONL items
+  -f, --filter=[CONDITION]   filter JSONL items
   -h, --help                 show CLI help
 
   -v, --version              show CLI version
@@ -114,10 +114,11 @@ OPTIONS
   --uni=uni                  aggregate number of unique occurrences of given field
 
 DESCRIPTION
-  Simply pipe in any JSONL stream and with filter and/or aggregation flag.
+Simply pipe in any JSONL stream and with filter and/or aggregation flags.
 
-  If you use only --filter then jsonlash outputs filtered jsonl stream.
+If you use only --filter flag then jsonlash outputs filtered jsonl stream.
 
-  If you use --aggregate command then it renders a table with aggregated data.
-  Additionally you may add one or more --min|--max|--sum|---avg|--uni flags to compute aggregated values of some fields
+If you also use --aggregate flag then it renders a table with aggregated data.
+Additionally you may add one or more --min|--max|--sum|---avg|--uni flags to
+compute aggregated values of given fields.
 ```
