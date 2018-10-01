@@ -30,7 +30,7 @@ We currently use [Log DNA](https://logdna.com/) as logging service so I am going
 logdna tail | jsonlash
 ```
 
-Now it will simply print out the log as it comes. So lets filter the API logs that are in form:
+Now it will simply print out the log as it comes. So let's filter the API logs that are in the form:
 
 ```
 {
@@ -59,7 +59,7 @@ logdna tail | jsonlash -f 'msg=API call' -f 'req.method=POST' -f 'req.duration>1
 
 ### Aggregations
 
-Lets continue with API logs example. To group log lines by request method and compute average and maximal duration call:
+Let's continue with API logs example. To group log lines by request method and compute average and maximal duration call:
 
 ```bash
 logdna tail | jsonlash -f 'msg=API call' -a req.method --max req.duration --avg req.duration
@@ -75,7 +75,7 @@ and output will be a table with data aggregated in realtime:
 
 ### 1.
 
-Aggregate logs by two fields `req.method` and `req.routeName` and compute average duration and maximum duration
+Aggregate logs by two fields `req.method` and `req.routeName` and compute average duration and the maximum duration
 
 ```bash
 
@@ -105,13 +105,19 @@ OPTIONS
   -e, --expand               expand outputted JSON
   -f, --filter=filter        filter JSONL items
   -h, --help                 show CLI help
+
   -v, --version              show CLI version
-  --avg=avg                  aggregate average value over all occurances of given field
-  --max=max                  aggregate maximum value over all occurances of given field
-  --min=min                  aggregate minimum value over all occurances of given field
-  --sum=sum                  aggregate sum over all occurances of given field
-  --uni=uni                  aggregate number of unique occurances of given field
+  --avg=avg                  aggregate average value over all occurrences of given field
+  --max=max                  aggregate maximum value over all occurrences of given field
+  --min=min                  aggregate minimum value over all occurrences of given field
+  --sum=sum                  aggregate sum over all occurrences of given field
+  --uni=uni                  aggregate number of unique occurrences of given field
 
 DESCRIPTION
   Simply pipe in any JSONL stream and with filter and/or aggregation flag.
+
+  If you use only --filter then jsonlash outputs filtered jsonl stream.
+
+  If you use --aggregate command then it renders a table with aggregated data.
+  Additionally you may add one or more --min|--max|--sum|---avg|--uni to compute aggregated values of some fields
 ```

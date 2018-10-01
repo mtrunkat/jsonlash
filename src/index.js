@@ -42,7 +42,13 @@ class JsonlashCommand extends Command {
 }
 
 JsonlashCommand.description = `This is a simple command line tool to filter and aggregate JSONL (json-lines) streams.
-Simply pipe in any JSONL stream and with filter and/or aggregation flag.`;
+
+Simply pipe in any JSONL stream and with filter and/or aggregation flags.
+
+If you use only --filter then jsonlash outputs filtered jsonl stream.
+
+If you use --aggregate command then it renders a table with aggregated data.
+Additionally you may add one or more --min|--max|--sum|---avg|--uni to compute aggregated values of some fields`;
 
 JsonlashCommand.flags = {
     version: flags.version({
@@ -51,26 +57,15 @@ JsonlashCommand.flags = {
     help: flags.help({
         char: 'h',
     }),
-    aggregate: flags.string({
-        char: 'a',
-        description: 'aggregate JSONL items',
-        multiple: true,
-    }),
-    expand: flags.boolean({
-        char: 'e',
-        description: 'expand outputted JSON',
-        exclusive: ['aggregate'],
-    }),
     filter: flags.string({
         char: 'f',
         description: 'filter JSONL items',
         multiple: true,
     }),
-    debug: flags.boolean({
-        char: 'd',
-        description: 'debug mode, shows JSON parsing errors',
-        multiple: false,
-        exclusive: ['aggregate'],
+    aggregate: flags.string({
+        char: 'a',
+        description: 'aggregate JSONL items',
+        multiple: true,
     }),
 
     // These are extra parameters for aggregation.
@@ -79,6 +74,19 @@ JsonlashCommand.flags = {
     [AGGREGATION_TYPES.sum]: flags.string({ dependsOn: ['aggregate'], multiple: true, description: 'aggregate sum over all occurances of given field' }),
     [AGGREGATION_TYPES.avg]: flags.string({ dependsOn: ['aggregate'], multiple: true, description: 'aggregate average value over all occurances of given field' }),
     [AGGREGATION_TYPES.uni]: flags.string({ dependsOn: ['aggregate'], multiple: true, description: 'aggregate number of unique occurances of given field' }),
+
+
+    expand: flags.boolean({
+        char: 'e',
+        description: 'expand outputted JSON',
+        exclusive: ['aggregate'],
+    }),
+    debug: flags.boolean({
+        char: 'd',
+        description: 'debug mode, shows JSON parsing errors',
+        multiple: false,
+        exclusive: ['aggregate'],
+    }),
 };
 
 module.exports = JsonlashCommand;

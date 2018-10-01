@@ -1,7 +1,7 @@
 {
   "name": "jsonlash",
   "description": "CLI utility for filtering and aggregation of JSONL streams.",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "author": "Marek Trunkat @mtrunkat",
   "bin": {
     "jsonlash": "./bin/run"
