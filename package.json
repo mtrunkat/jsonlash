@@ -1,7 +1,7 @@
 {
   "name": "jsonlash",
-  "description": "JSONL transformations and aggregations CLI utility.",
-  "version": "0.0.2",
+  "description": "CLI utility for filtering and aggregation of JSONL streams.",
+  "version": "0.0.3",
   "author": "Marek Trunkat @mtrunkat",
   "bin": {
     "jsonlash": "./bin/run"
@@ -38,7 +38,9 @@
   ],
   "homepage": "https://github.com/mtrunkat/jsonlash",
   "keywords": [
-    "oclif"
+    "cli",
+    "jsonl",
+    "stream"
   ],
   "license": "MIT",
   "main": "src/index.js",
