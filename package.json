@@ -1,0 +1,53 @@
+{
+  "name": "jsonlash",
+  "description": "JSONL transformations and aggregations CLI utility.",
+  "version": "0.0.1",
+  "author": "Marek Trunkat @mtrunkat",
+  "bin": {
+    "jsonlash": "./bin/run"
+  },
+  "bugs": "https://github.com/mtrunkat/jsonlash/issues",
+  "dependencies": {
+    "@oclif/command": "^1",
+    "@oclif/config": "^1",
+    "@oclif/plugin-help": "^2",
+    "bluebird": "^3.5.1",
+    "cli-table": "^0.3.1",
+    "underscore": "^1.8.3"
+  },
+  "devDependencies": {
+    "@oclif/test": "^1",
+    "chai": "^4",
+    "eslint": "^4.11.0",
+    "eslint-config-airbnb": "^16.1.0",
+    "eslint-config-airbnb-base": "^12.1.0",
+    "eslint-plugin-import": "^2.8.0",
+    "eslint-plugin-jsx-a11y": "^6.0.2",
+    "eslint-plugin-promise": "^3.6.0",
+    "eslint-plugin-react": "^7.4.0",
+    "mocha": "^5",
+    "nyc": "^12",
+    "sinon": "^4.1.2"
+  },
+  "engines": {
+    "node": ">=8.0.0"
+  },
+  "files": [
+    "/bin",
+    "/src"
+  ],
+  "homepage": "https://github.com/mtrunkat/jsonlash",
+  "keywords": [
+    "oclif"
+  ],
+  "license": "MIT",
+  "main": "src/index.js",
+  "oclif": {
+    "bin": "jsonlash"
+  },
+  "repository": "mtrunkat/jsonlash",
+  "scripts": {
+    "posttest": "eslint .",
+    "test": "nyc mocha --forbid-only \"test/**/*.test.js\""
+  }
+}
