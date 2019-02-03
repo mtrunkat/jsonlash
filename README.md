@@ -68,7 +68,7 @@ logdna tail | jsonlash -f 'msg=API call' -a req.method --max req.duration --avg 
 and output will be a table with data aggregated in realtime:
 
 <div align="center">
-    <img src="https://uc90d6b2f1095fdef187f2d0230d.previews.dropboxusercontent.com/p/orig/AANd1RKoGxAcGEkhWG_dY0JTl927e5STzencbkAfzAC5zvxrx9HH76iTZLib8fCyqCM2qWDBmlaYVHU93ETBmoVJhWK_-t9DccVvCCTYA5pqoaipZ68MzJRfAeYsiFyAZ5uetQVEZ7qpqyzQy2jo3i_9XmIviz0sYp7QbKUPK_OYOjH9CKgCIYWlXTSww7wgzY86P_vckZDrXXBMgBy6TrQf/p.gif?size=1280x960&size_mode=3" />
+    <img src="https://trunkat.eu/external-assets/jsonlash.gif" />
 </div>
 
 ## Examples
